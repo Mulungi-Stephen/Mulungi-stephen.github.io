@@ -1,0 +1,122 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mulungi Stephen | Web Designer Portfolio</title>
+
+    <meta name="description" content="Professional portfolio website for Mulungi Stephen, a creative web designer and frontend developer.">
+    
+    <meta name="keywords" content="Mulungi Stephen, web designer, frontend developer, portfolio, HTML, CSS, JavaScript, SEO">
+    
+    <meta name="author" content="Mulungi Stephen">
+
+    <meta property="og:title" content="Mulungi Stephen Portfolio">
+    <meta property="og:description" content="Creative web designer portfolio with projects and skills.">
+    <meta property="og:type" content="website">
+
+    <meta name="robots" content="index, follow">
+</head>
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+export default function MulungiStephenPortfolio() {
+  const [message, setMessage] = useState('WELCOME TO MY PORTFOLIO');
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+  };
+
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center text-white"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80')",
+      }}
+    >
+      <div className="min-h-screen bg-black/60">
+        {/* Hero Section */}
+        <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-6xl font-bold mb-4"
+          >
+            MULUNGI STEPHEN
+          </motion.h1>
+          <p className="text-2xl mb-6">WEB DESIGNER & FRONTEND DEVELOPER</p>
+          <p className="mb-8 text-lg">{message}</p>
+          <div className="space-x-4">
+            <button
+              onClick={() => setMessage('I BUILD MODERN, FAST, AND RESPONSIVE WEBSITES')}
+              className="px-6 py-3 rounded-2xl bg-white text-black"
+            >
+              ABOUT ME
+            </button>
+            <button
+              onClick={() => setMessage('LET US WORK TOGETHER ON YOUR NEXT PROJECT')}
+              className="px-6 py-3 rounded-2xl border border-white"
+            >
+              HIRE ME
+            </button>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="px-10 py-16 max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">SKILLS</h2>
+          <ul className="list-disc pl-8 space-y-2 text-lg">
+            <li>HTML, CSS, JAVASCRIPT</li>
+            <li>REACT & TAILWIND CSS</li>
+            <li>SEO OPTIMIZATION</li>
+            <li>RESPONSIVE WEB DESIGN</li>
+          </ul>
+        </section>
+
+        {/* Projects */}
+        <section className="px-10 py-16 max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">PROJECTS</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/10 p-6 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold">COCO BIKES WEBSITE</h3>
+              <p>AN INTERACTIVE BUSINESS WEBSITE WITH SEO FEATURES.</p>
+            </div>
+            <div className="bg-white/10 p-6 rounded-2xl shadow-lg">
+              <h3 className="text-2xl font-semibold">PERSONAL PORTFOLIO</h3>
+              <p>A MODERN PORTFOLIO SHOWCASING SKILLS AND PROJECTS.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form */}
+        <section className="px-10 py-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold mb-6">CONTACT ME</h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              placeholder="YOUR NAME"
+              className="w-full p-3 rounded-xl text-black"
+            />
+            <input
+              type="email"
+              placeholder="YOUR EMAIL"
+              className="w-full p-3 rounded-xl text-black"
+            />
+            <textarea
+              placeholder="YOUR MESSAGE"
+              className="w-full p-3 rounded-xl text-black h-32"
+            />
+            <button className="px-6 py-3 bg-white text-black rounded-2xl">
+              SEND MESSAGE
+            </button>
+          </form>
+          {formSubmitted && (
+            <p className="mt-4 text-lg">MESSAGE SENT SUCCESSFULLY!</p>
+          )}
+        </section>
+      </div>
+    </div>
+  );
+}
