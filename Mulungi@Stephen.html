@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulungi Stephen | Premium Web Designer Portfolio</title>
+  <meta name="description" content="Premium freelance portfolio for Mulungi Stephen, web designer and frontend developer in Uganda." />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Arial,sans-serif;background:#0f172a;color:#fff;line-height:1.6}
+    nav{position:sticky;top:0;background:#111827;padding:18px;text-align:center}
+    nav a{color:#fff;text-decoration:none;margin:0 18px;font-weight:bold}
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1400&q=80') center/cover}
+    .hero h1{font-size:4rem;margin-bottom:10px}
+    .hero p{max-width:700px;font-size:1.2rem;margin-bottom:20px}
+    .btn{padding:14px 24px;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+    .btn-primary{background:#fff;color:#111827}
+    section{max-width:1100px;margin:auto;padding:80px 20px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+    .card{background:#1e293b;padding:24px;border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+    .price{font-size:2rem;font-weight:bold;margin:10px 0}
+    form input,form textarea{width:100%;padding:14px;margin:10px 0;border:none;border-radius:10px}
+    footer{text-align:center;padding:30px;background:#111827}
+  @keyframes floatIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .light-mode{background:#f8fafc;color:#111827}
+    .light-mode nav,.light-mode footer{background:#e5e7eb;color:#111827}
+    .light-mode .card{background:#ffffff;color:#111827}
+  </style>
+</head>
+<body>
+  <nav>
+    <button onclick="toggleTheme()" style="float:right;padding:8px 14px;border:none;border-radius:8px;cursor:pointer">TOGGLE THEME</button>
+    <a href="#home">HOME</a>
+    <a href="#services">SERVICES</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#pricing">PRICING</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <section id="home" class="hero">
+    <h1>MULUNGI STEPHEN</h1>
+    <h2>FREELANCE WEB DESIGNER</h2>
+    <p>I create modern, responsive, and SEO-friendly websites that help businesses attract clients and grow online.</p>
+    <button class="btn btn-primary" onclick="scrollToSection('contact')">HIRE ME NOW</button>
+  </section>
+
+  <section id="services">
+    <h2>SERVICES</h2>
+    <div class="grid">
+      <div class="card"><h3>WEBSITE DESIGN</h3><p>Modern websites for businesses and personal brands.</p></div>
+      <div class="card"><h3>SEO SETUP</h3><p>Meta tags, indexing, and search optimization.</p></div>
+      <div class="card"><h3>WEBSITE UPDATES</h3><p>Maintenance, edits, and content upgrades.</p></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>CLIENT TESTIMONIALS</h2>
+    <div class="grid">
+      <div class="card" style="animation: floatIn 1s ease;">
+        <p>“MULUNGI BUILT A BEAUTIFUL WEBSITE FOR OUR BUSINESS AND HELPED US ATTRACT NEW CUSTOMERS.”</p>
+        <strong>- COCO BIKES TEAM</strong>
+      </div>
+      <div class="card" style="animation: floatIn 1.4s ease;">
+        <p>“FAST DELIVERY, CLEAN DESIGN, AND GREAT COMMUNICATION.”</p>
+        <strong>- FREELANCE CLIENT</strong>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>FEATURED PROJECTS</h2>
+    <div class="grid">
+      <div class="card"><h3>COCO BIKES</h3><p>Business website with strong branding and SEO.</p></div>
+      <div class="card"><h3>PERSONAL PORTFOLIO</h3><p>Professional freelance profile website.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>PRICING</h2>
+    <div class="grid">
+      <div class="card"><h3>BASIC</h3><div class="price">UGX 150K</div><p>Simple landing page website.</p></div>
+      <div class="card"><h3>BUSINESS</h3><div class="price">UGX 300K</div><p>Multi-section business website.</p></div>
+      <div class="card"><h3>PREMIUM</h3><div class="price">UGX 500K</div><p>Full portfolio + SEO + contact form.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>CONTACT ME</h2>
+    <form action="https://formsubmit.co/mulungistephen@outlook.com" method="POST">
+      <input type="text" name="name" placeholder="YOUR NAME" required />
+      <input type="email" name="email" placeholder="YOUR EMAIL" required />
+      <textarea name="message" rows="5" placeholder="YOUR MESSAGE" required></textarea>
+      <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 MULUNGI STEPHEN | FREELANCE WEB DESIGNER</p>
+  </footer>
+
+  <script>
+    function scrollToSection(id){
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+  function toggleTheme(){document.body.classList.toggle('light-mode');}
+  </script>
+</body>
+</html>
