@@ -99,10 +99,14 @@
 
         <section id="contact">
             <h2>CONTACT ME</h2>
-            <form onsubmit="submitForm(event)">
-                <input type="text" placeholder="YOUR NAME" required>
-                <input type="email" placeholder="YOUR EMAIL" required>
-                <textarea rows="5" placeholder="YOUR MESSAGE" required></textarea>
+            <form action="https://formsubmit.co/mulungistephen@gmail.com" method="POST" onsubmit="submitForm(event)">
+                <input type="text" name="name" placeholder="YOUR NAME" required>
+                <input type="email" name="email" placeholder="YOUR EMAIL" required>
+                <textarea name="message" placeholder="YOUR MESSAGE" required></textarea>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://mulungi-stephen.github.io/">
+
                 <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
             </form>
             <p id="messageBox"></p>
@@ -115,9 +119,12 @@
         }
 
         function submitForm(event) {
-            event.preventDefault();
-            document.getElementById('messageBox').innerText = 'MESSAGE SENT SUCCESSFULLY!';
+            document.getElementById('messageBox').innerText = 'SENDING MESSAGE...';
+            setTimeout(() => {
+                document.getElementById('messageBox').innerText = 'MESSAGE SENT SUCCESSFULLY!';
+            }, 1000);
         }
     </script>
 </body>
 </html>
+
