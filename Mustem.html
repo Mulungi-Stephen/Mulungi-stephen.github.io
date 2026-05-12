@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulungi Stephen | Web Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: #38bdf8;
+      font-size: 28px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 10%;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1974&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content h1 {
+      font-size: 65px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content span {
+      color: #38bdf8;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+      color: #d1d5db;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #38bdf8;
+      color: black;
+    }
+
+    .secondary {
+      border: 2px solid #38bdf8;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+    }
+
+    /* SECTION */
+    section {
+      padding: 100px 10%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 50px;
+      color: #38bdf8;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .about-text p {
+      line-height: 1.8;
+      color: #d1d5db;
+      font-size: 17px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .skill-card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 20px;
+      transition: 0.4s;
+      text-align: center;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      background: #38bdf8;
+      color: black;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #1e293b;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 15px 0;
+      font-size: 18px;
+      color: #d1d5db;
+    }
+
+    .contact a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* ANIMATION */
+    .fade {
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+    @media(max-width: 768px) {
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h2>Stephen.</h2>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content fade">
+      <h1>Hello, I'm <span>Mulungi Stephen</span></h1>
+      <p>
+        A passionate web developer and creative designer building modern websites,
+        business landing pages, and interactive web experiences.
+      </p>
+
+      <div class="buttons">
+        <a href="#projects" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn secondary">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="title">About Me</h2>
+
+    <div class="about">
+      <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1974&auto=format&fit=crop" alt="Developer">
+
+      <div class="about-text">
+        <p>
+          I am a self-driven web designer and developer focused on creating beautiful,
+          responsive, and professional websites. I enjoy transforming ideas into real
+          digital experiences using HTML, CSS, JavaScript, and creative UI design.
+        </p>
+
+        <br>
+
+        <p>
+          My goal is to help businesses, schools, and individuals establish a strong
+          online presence with fast, modern, and visually impressive websites.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="title">My Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>HTML5</h3>
+        <p>Modern semantic website structure.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>CSS3</h3>
+        <p>Responsive layouts and animations.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>JavaScript</h3>
+        <p>Interactive and dynamic websites.</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>UI/UX Design</h3>
+        <p>Clean and engaging user experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="title">Projects</h2>
+
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>Christmas Landing Page</h3>
+          <p>
+            Animated festive website with snowfall effects, music, and interactive design.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>Business Agency Website</h3>
+          <p>
+            Professional responsive website for businesses and startups.
+          </p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop" alt="Project">
+
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>
+            Personal portfolio showcasing projects, skills, and contact information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2 class="title">Contact Me</h2>
+
+    <p>Email: <a href="mailto:mulungistephen@outlook.com">mulungistephen@outlook.com</a></p>
+    <p>Available for freelance projects and collaborations.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Mulungi Stephen | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
